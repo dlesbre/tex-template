@@ -57,9 +57,13 @@ help: ## Show this help
 $(MAIN).pdf: build
 
 .PHONY: build
-build: ## Build main file, then clean dependencies
+build: ## Build main file, then remove build files
 	$(TEXMGR) $(MAIN)
 
 .PHONY: watch
-watch: ## Build main file and watch for changes
+watch: ## Build main file and watch for changes, remove build files after interrupt
 	$(TEXMGR) -wl $(MAIN)
+
+clean: ## Remove output PDF (and build files if any)
+	$(TEXMGR) -c
+	rm -f $(MAIN).pdf
