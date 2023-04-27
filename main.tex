@@ -1,6 +1,11 @@
 \documentclass[12pt,a4paper]{article}
 
+% =================================================================
+% Packages with options
+% =================================================================
+
 \usepackage[english]{babel}
+
 
 % Style files from https://github.com/dlesbre/tex/ included as git submodule.
 % - use 'git submodule update --init' to initialize
@@ -9,6 +14,20 @@
 \usepackage[english]{my-math}
 
 \usepackage[top=2cm,bottom=2cm,left=2cm,right=2cm]{geometry}
+\usepackage[noabbrev,nameinlink]{cleveref}
+
+\usepackage[nottoc]{tocbibind}
+\usepackage{natbib}
+
+% More compact lists
+\setlist{itemsep=1pt, topsep=2pt}
+
+% Section and subsection in TOC
+\setcounter{tocdepth}{2}
+
+% =================================================================
+% Preamble definition
+% =================================================================
 
 \title{METTRE UN TITRE}
 \author{Dorian Lesbre}
@@ -18,12 +37,27 @@
 
 \input{sections/macros.tex}
 
+% =================================================================
+% Begin document
+% =================================================================
+
 \begin{document}
 \maketitle
+
+\vfill
+{
+	% Don't color links in TOC
+	\hypersetup{linkcolor=color_fg}
+	\tableofcontents
+}
+\vfill
+\newpage
 
 \section{Introduction}
 
 \input{sections/introduction.tex}
+
+\section{Semantics}
 
 \section{Conclusion}
 
@@ -34,7 +68,7 @@
 % ==========================
 
 % \nocite{*} % Ajouter les sources non-citées
-\bibliographystyle{plain}
+\bibliographystyle{plainnat}
 \bibliography{main}
 
 \end{document}
