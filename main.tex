@@ -1,10 +1,12 @@
-% LTeX: language=en
-
 \documentclass[12pt,a4paper]{article}
 
-% style files from https://github.com/dlesbre/tex/
 \usepackage[english]{babel}
-\usepackage[english]{packages/styles/my-math}
+
+% Style files from https://github.com/dlesbre/tex/ included as git submodule.
+% - use 'git submodule update --init' to initialize
+% - build with 'TEXINPUTS=./packages//:$TEXINPUTS' for tex to find the style files
+%   (or copy/symlink them from ./package/styles to ./)
+\usepackage[english]{my-math}
 
 \usepackage[top=2cm,bottom=2cm,left=2cm,right=2cm]{geometry}
 
@@ -12,11 +14,20 @@
 \author{Dorian Lesbre}
 \date{\today}
 
-\invertcolors
+\invertcolors{}
+
+\input{sections/macros.tex}
 
 \begin{document}
 \maketitle
 
+\section{Introduction}
+
+\input{sections/introduction.tex}
+
+\section{Conclusion}
+
+\input{sections/conclusion.tex}
 
 % ==========================
 % Bibliographie
