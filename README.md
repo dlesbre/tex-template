@@ -7,8 +7,9 @@ included here as a submodule.
 **Installation:**
 
 ```console
-git clone
-git submodule update --init #
+git clone https://github.com/dlesbre/tex-template.git
+git submodule update --init # Update submodule
+git remote set-url origin <my/new/repo/url>
 ```
 
 **Building:** requires python 3 and texfot
