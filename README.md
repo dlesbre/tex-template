@@ -6,10 +6,13 @@ included here as a submodule.
 
 **Installation:**
 
-```console
+```bash
 git clone https://github.com/dlesbre/tex-template.git
-git submodule update --init # Update submodule
-git remote set-url origin <my/new/repo/url>
+
+git submodule update --init                # Update submodule
+
+git remote set-url origin my/new/repo/url  # Change origin OR
+git remote remove origin                   # Remove origin
 ```
 
 **Building:** requires python 3 and texfot
