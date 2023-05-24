@@ -12,12 +12,20 @@
 % - build with 'TEXINPUTS=./packages//:$TEXINPUTS' for tex to find the style files
 %   (or copy/symlink them from ./package/styles to ./)
 \usepackage[english]{my-math}
+\usepackage{subcaption}
 
 \usepackage[top=2cm,bottom=2cm,left=2cm,right=2cm]{geometry}
 \usepackage[noabbrev,nameinlink]{cleveref}
 
 \usepackage[nottoc]{tocbibind}
 \usepackage{natbib}
+
+\crefname{mylemma}{lemma}{lemmas}
+\crefname{defini}{definition}{definitions}
+
+% Mathpartir references
+\renewcommand{\DefTirName}[1]{\hypertarget{tir:#1}{\TirName{#1}}}
+\newcommand{\RefTir}[1]{\hyperlink{tir:#1}{\TirName{#1}}}
 
 % More compact lists
 \setlist{itemsep=1pt, topsep=2pt}
